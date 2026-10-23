@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Admission Form</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <header style="text-align: center">
         <h1>Student Admission Form</h1>
-        <p>Please fill out the form below.</p>
-        <hr>
+        <p><b>Web Development Advanced — Batch 2</b></p>
     </header>
 
     <main>
-        <form>
+        <form method="post">
 
             <fieldset>
-                <legend><b>Personal Information</b></legend>
+                <legend>Personal Information</legend>
 
-                <label for="fullname">Full Name:</label>
+                <label for="fullname" class="required-field">Full Name: </label>
                 <input type="text" id="fullname" name="fullname"
                 placeholder="Enter your full name"
                 minlength="3" required>
-                <br><br>
 
-                <label for="email">Email Address:</label>
+                <label for="email" class="required-field">Email Address: </label>
                 <input type="email" id="email" name="email"
                 placeholder="example@gmail.com" required>
-                <br><br>
 
-                <label for="phone">Phone Number:</label>
+                <label for="phone" class="required-field">Phone Number:</label>
                 <input type="tel" id="phone" name="phone"
                 placeholder="03XX-XXXXXXX">
-                <br><br>
 
-                <label for="age">Age:</label>
+                <label for="age" class="required-field">Age: </label>
                 <input type="number" id="age" name="age"
                 placeholder="Enter your age"
                 min="16" max="60" required>
-                <br><br>
 
-                <label for="city">City:</label>
+                <label for="city"class="required-field">City: </label>
                 <select id="city" name="city" required>
                     <option value="">--Select city--</option>
                     <option value="Taxila">Taxila</option>
@@ -47,15 +47,12 @@
                     <option value="Islamabad">Islamabad</option>
                     <option value="Rawalpindi">Rawalpindi</option>
                 </select>
-
             </fieldset>
 
-            <br>
-
             <fieldset>
-                <legend><b>Course Selection</b></legend>
+                <legend>Course Selection</legend>
 
-                <label for="course">Select Course:</label>
+                <label for="course" class="required-field">Select Course: </label>
                 <select id="course" name="course" required>
                     <option value="">--Select course--</option>
                     <option value="Web Development">Web Development</option>
@@ -64,13 +61,12 @@
                     <option value="Artificial Intelligence">Artificial Intelligence</option>
                     <option value="Cyber Security">Cyber Security</option>
                 </select>
-
             </fieldset>
 
-            <br>
+            <fieldset id="class-timing">
+                <legend>Preferred Class Shift</legend>
 
-            <fieldset>
-                <legend><b>Preferred Class Shift</b></legend>
+                <p>Please select your preferred shift: *</p>
 
                 <input type="radio" id="morning" name="shift"
                 value="Morning" required>
@@ -83,13 +79,12 @@
                 <input type="radio" id="weekend" name="shift"
                 value="Weekend">
                 <label for="weekend">Weekend</label>
-
             </fieldset>
 
-            <br>
-
             <fieldset>
-                <legend><b>Existing Skills</b></legend>
+                <legend>Existing Skills (Optional)</legend>
+
+                <p>Select the skills you already know:</p>
 
                 <input type="checkbox" id="html" name="skills"
                 value="HTML">
@@ -106,57 +101,56 @@
                 <input type="checkbox" id="python" name="skills"
                 value="Python">
                 <label for="python">Python</label>
-
             </fieldset>
-
-            <br>
 
             <fieldset>
-                <legend><b>Motivation</b></legend>
+                <legend>Motivation</legend>
 
                 <label for="motivation">
-                    Why do you want to join this course?
+                    Why do you want to join this course? *
                 </label>
-                <br>
 
                 <textarea id="motivation" name="motivation"
-                rows="4" cols="40"
-                placeholder="Write your reason here..."
+                rows="4" placeholder="Write your reason here..."
                 minlength="10" maxlength="200" required></textarea>
-
             </fieldset>
 
-            <br>
+            <fieldset>
+                <legend>Additional Information (Optional)</legend>
 
-<fieldset>
-    <legend><b>Additional Information (Optional)</b></legend>
+                <label for="portfolio">Portfolio Website URL:</label>
+                <input type="url" id="portfolio" name="portfolio"
+                placeholder="https://example.com">
 
-    <label for="portfolio">Portfolio Website URL:</label>
-    <input type="url" id="portfolio" name="portfolio"
-    placeholder="https://example.com">
-    <br><br>
+                <label for="additional-phone">Additional Phone Number:</label>
+                <input type="tel" id="additional-phone"
+                name="additional-phone"
+                placeholder="Enter phone number"
+                pattern="03[0-9]{9}"
+                title="Enter an 11-digit Pakistani mobile number">
 
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone"
-    placeholder="Enter phone number"
-    pattern="03[0-9]{9}"
-    title="Enter an 11-digit Pakistani mobile number">
-    <br><br>
+                <label for="startdate">Preferred Starting Date:</label>
+                <input type="date" id="startdate" name="startdate">
+            </fieldset>
 
-    <label for="startdate">Preferred Starting Date:</label>
-    <input type="date" id="startdate" name="startdate">
+            <div class="form-actions">
+                <button id="submit-btn" type="submit">
+                    Submit Application
+                </button>
 
-</fieldset>
-<br>
-            <button type="submit">Submit Application</button>
-            <button type="reset">Clear Form</button>
+                <button type="reset" id="clear-btn">
+                    Clear Form
+                </button>
+            </div>
 
         </form>
     </main>
-
-    <footer>
-        <hr>
-        <p>Thank you for applying!</p>
+    <br>
+<hr>
+    <footer style="text-align:center">
+        <p>&copy; 2026 Web Develepment Advanced — Batch 2. All rights reserved.</p>
+        <span class="Student-Name"> Laiba Aftab |
+        3174404</span>
     </footer>
 
 </body>
